@@ -1,0 +1,95 @@
+<% include ../includes/header %>
+<!-- Page Content -->
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-sm-10 col-centered">
+            <div class="bs-callout bs-callout-info" id="callout-navs-tabs-plugin"> 
+                <h4>Use ScrapeYouTube to scrape YouTube URLs</h4>
+                <p>Insert your keyword, select your desired filters and click on "ScrapeIT" button to proceed. You will get a ".txt" file at the end of the scraping.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Form -->
+    <form action="/scrapeit" method="POST">
+        <div class="row">
+            <div class="col-lg-10 col-sm-10 col-centered">
+                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter your desired keyword.." autocomplete="off" />
+            </div>
+        </div>
+        <!-- Filters -->
+        <div class="row">
+            <!-- backdoor grid -->
+            <div class="col-lg-1 col-sm-1"></div>
+            <!-- backdoor grid -->
+
+            <!-- Upload date filter -->
+            <div class="col-lg-2 col-sm-2">
+                <select name="filter_uploadDate" id="filter_uploadDate" class="form-control">
+                    <option value="-1">Upload date</option>
+                    <option value="0">Last hour</option>
+                    <option value="1">Today</option>
+                    <option value="2">This week</option>
+                    <option value="3">This month</option>
+                    <option value="4">This year</option>
+                </select>
+            </div>
+            <!-- Upload date filter end -->
+            <!-- Type filter -->
+            <div class="col-lg-2 col-sm-2">
+                <select name="filter_type" id="filter_type" class="form-control">
+                    <option value="-1">Type</option>
+                    <option value="0">Video</option>
+                    <option value="1">Channel</option>
+                    <option value="2">Playlist</option>
+                    <option value="3">Movie</option>
+                    <option value="4">Show</option>
+                </select>
+            </div>
+            <!-- Type filter end -->
+            <!-- Duration filter -->
+            <div class="col-lg-2 col-sm-2">
+                <select name="filter_duration" id="filter_duration" class="form-control">
+                    <option value="-1">Duration</option>
+                    <option value="0">Short (< 4 min.)</option>
+                    <option value="1">Long (> 20 min.)</option>
+                </select>
+            </div>
+            <!-- Duration filter end -->
+            <!-- Features filter -->
+            <div class="col-lg-2 col-sm-2">
+                <select name="filter_features" id="filter_features" class="form-control">
+                    <option value="-1">Features</option>
+                    <option value="0">4K</option>
+                    <option value="1">HD</option>
+                    <option value="2">Subtitles/CC</option>
+                    <option value="3">Creative Commons</option>
+                    <option value="4">3D</option>
+                    <option value="5">Live</option>
+                    <option value="6">Purchased</option>
+                    <option value="7">360&deg;</option>
+                </select>
+            </div>
+            <!-- Features filter end -->
+            <!-- Sort by filter -->
+            <div class="col-lg-2 col-sm-2">
+                <select name="filter_sortBy" id="filter_sortBy" class="form-control">
+                    <option value="-1">Sort by</option>
+                    <option value="1">Upload date</option>
+                    <option value="2">View count</option>
+                    <option value="3">Rating</option>
+                </select>
+            </div>
+            <!-- Sort by filter end -->
+        </div>
+        <!-- Filters end -->
+        <div class="row">
+            <div class="col-lg-10 col-sm-10 col-centered">
+                <button type="submit" class="btn btn-block btn-danger"><i class="fa fa-play" aria-hidden="true"></i> ScrapeIT</button>
+            </div>
+        </div>
+        <!-- /.row -->
+    </form>
+    <!-- Form -->
+    </div>
+    <!-- /.container -->
+<% include ../includes/footer %>
